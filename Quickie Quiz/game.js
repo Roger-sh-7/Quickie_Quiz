@@ -1,3 +1,4 @@
+
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const progressText = document.getElementById('progressText');
@@ -72,11 +73,11 @@ getNewQuestion = () => {
 
     const questionIndex = Math.floor(Math.random() * availableQuesions.length);
     currentQuestion = availableQuesions[questionIndex];
-    question.innerHTML = currentQuestion.question;
+    question.innerText = currentQuestion.question;
 
     choices.forEach((choice) => {
         const number = choice.dataset['number'];
-        choice.innerHTML = currentQuestion['choice' + number];
+        choice.innerText = currentQuestion['choice' + number];
     });
 
     availableQuesions.splice(questionIndex, 1);
